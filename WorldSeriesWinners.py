@@ -1,4 +1,4 @@
-file = open("WorldSeriesWinners.txt",'r')
+file = open("WorldSeriesWinners.txt", "r")
 
 winners = file.read()
 
@@ -10,23 +10,28 @@ winnerByYear = {}
 for x in winners:
     winnerCount[x] = winners.count(x)
 
-print(winnerCount)
+# print(winnerCount)
 
 count = 1903
 
 for x in winners:
 
-    winnerByYear[int(count)] = x
+    winner = []
+    winner.append(x)
+    winner.append(winnerCount[x])
+
+    winnerByYear[int(count)] = winner
     count += 1
 
     if count == 1904 or count == 1994:
-        count +=1
+        count += 1
 
 print(winnerByYear)
 
-year = int(input("Please enter a year between 1903 and 2009 for the winner of that years World Series: "))
+year = int(
+    input(
+        "Please enter a year between 1903 and 2008 for the winner of that years World Series: "
+    )
+)
 
-print(winnerByYear.get(year,'No winner for that year'))
-
-
-
+print(winnerByYear.get(year, "No winner for that year"))
