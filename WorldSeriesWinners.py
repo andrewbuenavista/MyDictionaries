@@ -10,8 +10,6 @@ winnerByYear = {}
 for x in winners:
     winnerCount[x] = winners.count(x)
 
-# print(winnerCount)
-
 count = 1903
 
 for x in winners:
@@ -26,12 +24,7 @@ for x in winners:
     if count == 1904 or count == 1994:
         count += 1
 
-print(winnerByYear)
 
-year = int(
-    input(
-        "Please enter a year between 1903 and 2008 for the winner of that years World Series: "
-    )
-)
+year = int(input("Please enter a year between 1903 and 2008 for the winner of that years World Series: "))
 
 print(winnerByYear.get(year, "No winner for that year"))
